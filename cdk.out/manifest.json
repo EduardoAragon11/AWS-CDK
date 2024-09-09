@@ -1,0 +1,171 @@
+{
+  "version": "36.0.24",
+  "artifacts": {
+    "CdkTs2Stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkTs2Stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkTs2Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://171286946604/us-east-1",
+      "properties": {
+        "templateFile": "CdkTs2Stack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::171286946604:role/cdk-hnb659fds-deploy-role-171286946604-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::171286946604:role/cdk-hnb659fds-cfn-exec-role-171286946604-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-171286946604-us-east-1/4564455d86a5be84b98e4b55da8dda2ecc1937dfc9fa4320d97857701df1d825.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkTs2Stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::171286946604:role/cdk-hnb659fds-lookup-role-171286946604-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdkTs2Stack.assets"
+      ],
+      "metadata": {
+        "/CdkTs2Stack": [
+          {
+            "type": "aws:cdk:error",
+            "data": "Need to perform AWS calls for account 171286946604, but no credentials have been configured",
+            "trace": [
+              "Annotations.addMessage (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addError (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1100)",
+              "Function.getValue (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/aws-cdk-lib/core/lib/context-provider.js:2:1172)",
+              "Function.fromLookup (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:9203)",
+              "new Ec2InstanceStack (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/lib/cdk-ts2-stack.ts:26:20)",
+              "Object.<anonymous> (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/bin/cdk-ts2.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1480:14)",
+              "Module.m._compile (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/index.ts:1618:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1564:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/index.ts:1621:12)",
+              "Module.load (node:internal/modules/cjs/loader:1287:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1103:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:168:12)",
+              "phase4 (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/bin.ts:649:14)",
+              "bootstrap (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/bin.ts:95:10)",
+              "main (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/bin.ts:55:10)",
+              "Object.<anonymous> (/home/edfearay/Documents/utec-2024.2/Cloud/project_1/cdk-ts2/node_modules/ts-node/src/bin.ts:800:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1480:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1564:10)",
+              "Module.load (node:internal/modules/cjs/loader:1287:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:1103:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:168:12)",
+              "node:internal/main/run_main_module:30:49"
+            ]
+          }
+        ],
+        "/CdkTs2Stack/InstanceName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceName"
+          }
+        ],
+        "/CdkTs2Stack/AMI": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMI"
+          }
+        ],
+        "/CdkTs2Stack/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceSecurityGroup896E10BF"
+          }
+        ],
+        "/CdkTs2Stack/EC2Instance/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2InstanceInstanceRoleBDF87973"
+          }
+        ],
+        "/CdkTs2Stack/EC2Instance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2InstanceInstanceProfile4A6C6689"
+          }
+        ],
+        "/CdkTs2Stack/EC2Instance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2Instance770AAE32"
+          }
+        ],
+        "/CdkTs2Stack/InstanceId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceId"
+          }
+        ],
+        "/CdkTs2Stack/InstancePublicIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstancePublicIP"
+          }
+        ],
+        "/CdkTs2Stack/websimpleURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "websimpleURL"
+          }
+        ],
+        "/CdkTs2Stack/webplantillaURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webplantillaURL"
+          }
+        ],
+        "/CdkTs2Stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdkTs2Stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdkTs2Stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdkTs2Stack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  },
+  "missing": [
+    {
+      "key": "vpc-provider:account=171286946604:filter.isDefault=true:region=us-east-1:returnAsymmetricSubnets=true",
+      "provider": "vpc-provider",
+      "props": {
+        "account": "171286946604",
+        "region": "us-east-1",
+        "filter": {
+          "isDefault": "true"
+        },
+        "returnAsymmetricSubnets": true,
+        "lookupRoleArn": "arn:${AWS::Partition}:iam::171286946604:role/cdk-hnb659fds-lookup-role-171286946604-us-east-1"
+      }
+    }
+  ]
+}

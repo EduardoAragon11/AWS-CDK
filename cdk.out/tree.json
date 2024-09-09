@@ -1,0 +1,402 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "CdkTs2Stack": {
+        "id": "CdkTs2Stack",
+        "path": "CdkTs2Stack",
+        "children": {
+          "InstanceName": {
+            "id": "InstanceName",
+            "path": "CdkTs2Stack/InstanceName",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.156.0"
+            }
+          },
+          "AMI": {
+            "id": "AMI",
+            "path": "CdkTs2Stack/AMI",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.156.0"
+            }
+          },
+          "VPC": {
+            "id": "VPC",
+            "path": "CdkTs2Stack/VPC",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "CdkTs2Stack/VPC/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "CdkTs2Stack/VPC/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "CdkTs2Stack/VPC/PrivateSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "CdkTs2Stack/VPC/PrivateSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "IsolatedSubnet1": {
+                "id": "IsolatedSubnet1",
+                "path": "CdkTs2Stack/VPC/IsolatedSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "IsolatedSubnet2": {
+                "id": "IsolatedSubnet2",
+                "path": "CdkTs2Stack/VPC/IsolatedSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.156.0"
+            }
+          },
+          "InstanceSecurityGroup": {
+            "id": "InstanceSecurityGroup",
+            "path": "CdkTs2Stack/InstanceSecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkTs2Stack/InstanceSecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "Permitir trafico SSH y HTTP desde cualquier lugar",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 22,
+                        "toPort": 22,
+                        "description": "Allow SSH"
+                      },
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 80,
+                        "toPort": 80,
+                        "description": "Allow HTTP"
+                      }
+                    ],
+                    "vpcId": "vpc-12345"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                  "version": "2.156.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+              "version": "2.156.0"
+            }
+          },
+          "VPC2": {
+            "id": "VPC2",
+            "path": "CdkTs2Stack/VPC2",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "CdkTs2Stack/VPC2/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "CdkTs2Stack/VPC2/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "CdkTs2Stack/VPC2/PrivateSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "CdkTs2Stack/VPC2/PrivateSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "IsolatedSubnet1": {
+                "id": "IsolatedSubnet1",
+                "path": "CdkTs2Stack/VPC2/IsolatedSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              },
+              "IsolatedSubnet2": {
+                "id": "IsolatedSubnet2",
+                "path": "CdkTs2Stack/VPC2/IsolatedSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.156.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.156.0"
+            }
+          },
+          "EC2Instance": {
+            "id": "EC2Instance",
+            "path": "CdkTs2Stack/EC2Instance",
+            "children": {
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "CdkTs2Stack/EC2Instance/InstanceRole",
+                "children": {
+                  "ImportInstanceRole": {
+                    "id": "ImportInstanceRole",
+                    "path": "CdkTs2Stack/EC2Instance/InstanceRole/ImportInstanceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.156.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdkTs2Stack/EC2Instance/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "CdkTs2Stack/EC2Instance"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.156.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.156.0"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "CdkTs2Stack/EC2Instance/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "EC2InstanceInstanceRoleBDF87973"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
+                  "version": "2.156.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkTs2Stack/EC2Instance/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "dummy1a",
+                    "blockDeviceMappings": [
+                      {
+                        "deviceName": "/dev/sda1",
+                        "ebs": {
+                          "volumeSize": 20
+                        }
+                      }
+                    ],
+                    "iamInstanceProfile": {
+                      "Ref": "EC2InstanceInstanceProfile4A6C6689"
+                    },
+                    "imageId": {
+                      "Ref": "AMI"
+                    },
+                    "instanceType": "t2.micro",
+                    "keyName": "vockey",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "InstanceSecurityGroup896E10BF",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": "p-12345",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "CdkTs2Stack/EC2Instance"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash\n#!/bin/bash\n      cd /var/www/html/\n      git clone https://github.com/utec-cc-2024-2-test/websimple.git\n      git clone https://github.com/utec-cc-2024-2-test/webplantilla.git\n      ls -l"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.CfnInstance",
+                  "version": "2.156.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ec2.Instance",
+              "version": "2.156.0"
+            }
+          },
+          "InstanceId": {
+            "id": "InstanceId",
+            "path": "CdkTs2Stack/InstanceId",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.156.0"
+            }
+          },
+          "InstancePublicIP": {
+            "id": "InstancePublicIP",
+            "path": "CdkTs2Stack/InstancePublicIP",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.156.0"
+            }
+          },
+          "websimpleURL": {
+            "id": "websimpleURL",
+            "path": "CdkTs2Stack/websimpleURL",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.156.0"
+            }
+          },
+          "webplantillaURL": {
+            "id": "webplantillaURL",
+            "path": "CdkTs2Stack/webplantillaURL",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.156.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdkTs2Stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdkTs2Stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.156.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "CdkTs2Stack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.156.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "CdkTs2Stack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.156.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.156.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.156.0"
+    }
+  }
+}
