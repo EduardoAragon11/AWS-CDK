@@ -2,6 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import { CfnOutput } from 'aws-cdk-lib';
 
 export class Ec2InstanceStack extends Stack {
@@ -31,6 +32,9 @@ export class Ec2InstanceStack extends Stack {
     securityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(22), 'Allow SSH');
     securityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(80), 'Allow HTTP');
 
+    // Existing IAM Role ARN
+    const existingRoleArn = 'arn:aws:iam::171286946604:role/LabRole';
+
     // EC2 Instance
     const ec2Instance = new ec2.Instance(this, 'EC2Instance', {
       vpc: ec2.Vpc.fromLookup(this, 'VPC2', { isDefault: true }),
@@ -39,16 +43,16 @@ export class Ec2InstanceStack extends Stack {
         'us-east-1': amiId.valueAsString,
       }),
       securityGroup: securityGroup,
-      keyName: 'vockey', // Key pair
+      keyName: 'vockey',
       blockDevices: [
         {
           deviceName: '/dev/sda1',
-          volume: ec2.BlockDeviceVolume.ebs(20), // 20 GB EBS Volume
+          volume: ec2.BlockDeviceVolume.ebs(20),
         },
       ],
+      role: iam.Role.fromRoleArn(this, 'ExistingRole', existingRoleArn),
     });
 
-    // User Data to execute commands at launch
     ec2Instance.addUserData(
       `#!/bin/bash
       cd /var/www/html/
