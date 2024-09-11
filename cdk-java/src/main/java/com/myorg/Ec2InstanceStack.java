@@ -29,7 +29,7 @@ public class Ec2InstanceStack extends Stack {
                 .build();
 
         // Security Group
-        Vpc vpc = (Vpc) Vpc.fromLookup(this, "VPC", VpcLookupOptions.builder()
+        IVpc vpc = Vpc.fromLookup(this, "VPC", VpcLookupOptions.builder()
                 .isDefault(true)
                 .build());
 
