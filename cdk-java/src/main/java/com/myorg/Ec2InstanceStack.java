@@ -4,6 +4,7 @@ import software.amazon.awscdk.CfnOutput;
 import software.amazon.awscdk.CfnParameter;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
+import software.amazon.awscdk.services.iam.IRole;
 import software.constructs.Construct;
 import software.amazon.awscdk.services.ec2.*;
 import software.amazon.awscdk.services.iam.Role;
@@ -44,7 +45,7 @@ public class Ec2InstanceStack extends Stack {
 
         // Existing IAM Role ARN
         String existingRoleArn = "arn:aws:iam::171286946604:role/LabRole";
-        Role role = (Role) Role.fromRoleArn(this, "ExistingRole", existingRoleArn);
+        IRole role = Role.fromRoleArn(this, "ExistingRole", existingRoleArn);
 
         // EC2 Instance
         Instance ec2Instance = Instance.Builder.create(this, "EC2Instance")
