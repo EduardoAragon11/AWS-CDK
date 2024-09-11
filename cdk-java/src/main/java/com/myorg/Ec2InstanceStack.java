@@ -36,7 +36,7 @@ public class Ec2InstanceStack extends Stack {
 
         SecurityGroup securityGroup = SecurityGroup.Builder.create(this, "InstanceSecurityGroup")
                 .vpc(vpc)
-                .description("Permitir tráfico SSH y HTTP desde cualquier lugar")
+                .description("Permitir trafico SSH y HTTP desde cualquier lugar")
                 .allowAllOutbound(true)
                 .build();
 
@@ -76,7 +76,7 @@ public class Ec2InstanceStack extends Stack {
                 .build();
 
         CfnOutput.Builder.create(this, "InstancePublicIP")
-                .description("IP pública de la instancia")
+                .description("IP publica de la instancia")
                 .value(ec2Instance.getInstancePublicIp())
                 .build();
 
